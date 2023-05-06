@@ -16,13 +16,10 @@ public class HomeServlet extends HttpServlet {
 private static final long serialVersionUID = 1L;
 	
 protected void doGet(HttpServletRequest request, HttpServletResponse response)
-throws ServletException, IOException {
-
-//String css = "/webapp/css/style.css";	
+throws ServletException, IOException {	
 String path = "/WEB-INF/index.jsp";
 ServletContext servletContext = getServletContext();
 RequestDispatcher requestDispatcher = servletContext.getRequestDispatcher(path);
-
 requestDispatcher.forward(request, response);
 }
 }
