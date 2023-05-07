@@ -3,20 +3,7 @@ pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="jakarta.tags.core" %>
 <%@ page import="domain.Student"%>
 <%@ page import="domain.Group"%>
-<%
-Group r1 = new Group(1l, "ИСТ-321", "КТиИБ", "2", "очная");
-Group r2 = new Group(2l, "ИСТ-331", "КТиИБ", "3", "очная");
-Group r3= new Group(3l, "ИСТ-332", "КТиИБ", "3", "очная");
-Group r4 = new Group(4l, "ЭК-525Z", "ЭиФ", "2", "заочная");
-Group[] groups = new Group[]{r1, r2, r3, r4};
-pageContext.setAttribute("groups", groups);
-Student p1 = new Student(1l, "Иванов", "Иван", "Иванов", "15.01.2003", "+7(961)-289-55-24", "ivanov@mail.ru", 1l, r1);
-Student p2 = new Student(2l, "Блохин", "Антон", "Владимирович", "19.04.2002", "+7(800)-555-35-35", "ant@gmail.com", 2l, r2);
-Student p3= new Student(3l, "Сидор", "Сидоров", "-", "08.02.2002", "+7(961)-289-33-57", "sidorov@mail.ru", 3l, r3);
-Student p4 = new Student(4l, "Петров", "Петр", "Петрович", "24.03.2002", "+7(961)-289-44-39", "petrov@mail.ru", 4l, r4);
-Student[] students = new Student[]{p1, p2, p3, p4};
-pageContext.setAttribute("students", students);
-%>
+
 
 <!DOCTYPE html>
 <html>
@@ -80,11 +67,11 @@ pageContext.setAttribute("students", students);
 </p>
 <p>
 <label for="group">Группа</label>
-<select>
+<select name="group">
 <option disabled>Выберите группу</option>
 <c:forEach var="group" items="${groups}">
 <option value="${group}">
-${group.getName()}
+<c:out value="${group.getName()}"></c:out>
 </option>
 </c:forEach>
 </select>
@@ -101,10 +88,11 @@ ${group.getName()}
 <label for="email">Эл. почта </label>
 <input type="text" name="email" />
 </p>
-</form>
 <p>
 <button type="submit">Добавить</button>
 </p>
+</form>
+
 </div>
 </article>
 </section>

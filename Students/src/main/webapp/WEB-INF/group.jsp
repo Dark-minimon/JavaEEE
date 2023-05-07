@@ -3,6 +3,7 @@ pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="jakarta.tags.core" %>
 <%@ page import="domain.Group"%>
 
+
 <!DOCTYPE html>
 <html>
 <link rel="stylesheet" type="text/css" href="css/style.css">
@@ -63,10 +64,11 @@ pageEncoding="UTF-8"%>
 <label for="type">Форма обучение
 </label> <input type="text" name="type" />
 </p>
-</form>
 <p>
 <button type="submit">Добавить</button>
 </p>
+</form>
+
 </div>
 </article>
 </section>
